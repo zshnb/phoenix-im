@@ -27,4 +27,12 @@ export class UserService {
       return await user.save();
     }
   }
+
+  async findByNameLike(userName: string) {
+    return await this.userModel
+      .find({
+        userName: { $regex: `.*${userName}.*` },
+      })
+      .exec();
+  }
 }
