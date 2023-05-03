@@ -7,7 +7,7 @@ import {
   WebSocketServer,
 } from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
-import { ChatMessage, CreateChatMessage } from "../type/message";
+import { CreateChatMessage } from "../type/message";
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Message } from '../schemas/message.schema';

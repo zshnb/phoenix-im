@@ -9,4 +9,10 @@ export class PrivateChatModel {
   owner: UserModel;
   @Field()
   target: UserModel;
+  @Field()
+  lastMessage: string;
+  @Field()
+  lastMessageUserName: string;
+  @Field()
+  lastMessageAt: number;
 }
