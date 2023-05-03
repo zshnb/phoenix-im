@@ -13,7 +13,7 @@ export class UserResolver {
     const users = await this.userService.findByNameLike(userName);
     return users.map((user) => {
       return {
-        id: user.id,
+        id: user._id.toJSON(),
         userName: user.userName,
       };
     });
