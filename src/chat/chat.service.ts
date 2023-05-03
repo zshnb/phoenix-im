@@ -41,7 +41,7 @@ export class ChatService {
     const owner = await this.userModel.findById(ownerUserId).exec();
     const chats = await this.privateChatModel
       .find({
-        owner,
+        $or: [{ owner: owner._id }, { target: owner._id }],
       })
       .populate('owner')
       .populate('target')

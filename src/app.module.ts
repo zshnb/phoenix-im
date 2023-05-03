@@ -4,8 +4,7 @@ import { WebsocketModule } from './websocket/websocket.module';
 import { UserModule } from './user/user.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { ChatController } from './chat/chat.controller';
-import { ChatService } from './chat/chat.service';
+import { MessageModule } from './message/message.module';
 import { ChatModule } from './chat/chat.module';
 
 @Module({
@@ -19,6 +18,7 @@ import { ChatModule } from './chat/chat.module';
       installSubscriptionHandlers: true,
       autoSchemaFile: true,
     }),
+    MessageModule,
   ],
 })
 export class AppModule {}
